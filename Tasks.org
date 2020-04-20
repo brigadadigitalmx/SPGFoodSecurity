@@ -22,6 +22,6 @@ Dada la demanda de despensas (serie de coordenadas y el tipo de despensa dd = (l
 *** Planeación de rutas. 
 Dado un número de cuadrillas, con la demanda asignada al centro de distribución, tenemos que encontrar el orden de visita para cada uno de los hogares que cada cuadrilla visitará. Se busca que el problema sea óptimo y se minimice el tiempo en calle de cada una de las cuadrillas. 
 ** Lenguaje 
-Se busca que el lenguaje para programar la API sea Python 3.7.
+Se busca que el lenguaje para programar la API sea Python 3.7. Manejado con Anaconda(o miniconda), para el versionamiento de paquetes. La librería para manejar la API será Flask.  
 ** Infraestructura. 
 Se requiere que se produzca una imagen de Docker para poder exportar todo en contenedores. 
