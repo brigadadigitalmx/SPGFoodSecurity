@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def index():
-    return voronoi(1, 2)
+    return "API working"
+
 
 
 if __name__ == '__main__':
