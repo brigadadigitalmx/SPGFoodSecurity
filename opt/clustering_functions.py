@@ -7,12 +7,12 @@ def asigna_medias(X, medias):
     # INPUT
     # X.- DataFrame
     ## labs_x.- Etiquetas de los datos
-    ## lon.- Latitud
-    ## lat.- Longitud
+    ## lon.- Longitud
+    ## lat.- Latitud
     # medias.- DataFrame
     ## labs_meds.- Etiquetas de las medias
-    ## lon.- Latitud
-    ## lat.- Longitud
+    ## lon.- Longitud
+    ## lat.- Latitud
     # OUTPUT
     # labs_x
     # labs_c.- array de tamaño labs_x.shape
@@ -28,12 +28,12 @@ def asigna_entregas(casas_df, centros_df):
     # INPUT
     # casas_df.- DataFrame
     ## labs_casas.- Etiquetas de los datos
-    ## lon.- Latitud
-    ## lat.- Longitud
+    ## lon.- Longitud
+    ## lat.- Latitud
     # centro_df.- DataFrame
     ## labs_centros.- Etiquetas de los centros
-    ## lon.- Latitud
-    ## lat.- Longitud
+    ## lon.- Longitud
+    ## lat.- Latitud
     ## n.- número de vehiculos en la flotilla
     # OUTPUT
     # labs_casas
