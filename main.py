@@ -9,10 +9,10 @@ app = Flask(__name__)
 def index():
     return "API working"
 
+
 @app.route('/get_voronoi')
 def get_voronoi():
-    return voronoi(1,2)
-
+    return voronoi(1, 2)
 
 
 if __name__ == '__main__':
