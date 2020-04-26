@@ -1,4 +1,3 @@
-from opt.voronoi import voronoi
 from flask import Flask
 
 app = Flask(__name__)
@@ -12,7 +11,7 @@ def index():
 
 @app.route('/get_voronoi')
 def get_voronoi():
-    return voronoi(1, 2)
+    return "lol"
 
 
 if __name__ == '__main__':
