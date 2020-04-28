@@ -17,7 +17,6 @@ def index():
 def get_routes():
     hogares_df = pd.DataFrame(request.json['hogares'])
     centros_df = pd.DataFrame(request.json['centros'])
-    print(centros_df)
     labs_casas, labs_centros, labs_cuadrilla = asigna_entregas(
         hogares_df, centros_df)
     df_input = pd.DataFrame({
@@ -25,7 +24,7 @@ def get_routes():
         'labs_centros': labs_centros,
         'labs_cuadrilla': labs_cuadrilla
     })
-    df_final = crea_rutas(df_input, 'labs_cuadrilla')
+    df_final = crea_rutas(hogares_df, df_input, centros_df)
     return df_to_json(df_final)
 
 
