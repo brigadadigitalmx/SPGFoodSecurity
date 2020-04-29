@@ -20,7 +20,7 @@ def get_routes():
     labs_casas, labs_centros, labs_cuadrilla = asigna_entregas(
         hogares_df, centros_df)
     df_input = pd.DataFrame({
-        'labs_casas': labs_casas,
+        'ReporteId': labs_casas,
         'labs_centros': labs_centros,
         'labs_cuadrilla': labs_cuadrilla
     })

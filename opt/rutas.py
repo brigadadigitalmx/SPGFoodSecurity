@@ -25,8 +25,8 @@ def crea_rutas(casas_df, df_final, centros_df):
     # OUTPUT
     # labs_rutas
     # df que entrega el orden a repartir por casas
-    df_rutas = casas_df.join(df_final, on='labs_casas', lsuffix='_ll')
-    df_rutas = df_rutas.drop('labs_casas_ll', axis=1)
+    df_rutas = casas_df.join(df_final, on='ReporteId', lsuffix='_ll')
+    df_rutas = df_rutas.drop('ReporteId_ll', axis=1)
     df_rutas = df_rutas.join(centros_df, on='labs_centros', rsuffix='_centros')
     df_rutas = df_rutas.drop('labs_centros_centros', axis=1)
     dataframes_ordered = []
@@ -34,17 +34,17 @@ def crea_rutas(casas_df, df_final, centros_df):
         new_df = df_rutas[df_rutas.labs_cuadrilla == x]
         centro_x = new_df.lat_centros.iloc[0]
         centro_y = new_df.lon_centros.iloc[0]
-        puntos = new_df[['labs_casas', 'labs_centros', 'labs_cuadrilla', 'lat', 'lon']]
+        puntos = new_df[['ReporteId', 'labs_centros', 'labs_cuadrilla', 'lat', 'lon']]
         puntos_ordenados = orden(puntos, centro_x, centro_y)
         dataframes_ordered.append(puntos_ordenados)
     final_df = pd.concat(dataframes_ordered, axis=0)
-    final_df = final_df[['labs_casas', 'labs_centros', 'labs_cuadrilla', 'labs_ruta']]
+    final_df = final_df[['ReporteId', 'labs_centros', 'labs_cuadrilla', 'labs_ruta']]
     return final_df
 
 
 if __name__ == '__main__':
     casas_df = pd.DataFrame({
-        'labs_casas': list(range(100)),
+        'ReporteId': list(range(100)),
         'lon': np.random.rand(100),
         'lat': np.random.rand(100)})
 
@@ -54,7 +54,7 @@ if __name__ == '__main__':
         'lat': np.random.rand(5),
         'n': [5, 2, 6, 3, 2]})
     df_final = pd.DataFrame({
-        'labs_casas': list(range(100)),
+        'ReporteId': list(range(100)),
         'labs_centros': [np.random.randint(0, 5) for x in range(0, 100)],
         'labs_cuadrilla': [np.random.randint(0, 5) for x in range(0, 100)]
         })

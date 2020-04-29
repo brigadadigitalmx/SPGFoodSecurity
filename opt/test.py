@@ -6,7 +6,7 @@ import time
 
 def generate_dataset(n_casas=100, n_centros=2, n_cuadrillas=[15, 15]):
     casas_df = pd.DataFrame({
-        'labs_casas': list(range(n_casas)),
+        'ReporteId': list(range(n_casas)),
         'lon': np.random.rand(n_casas),
         'lat': np.random.rand(n_casas)})
 
