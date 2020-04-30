@@ -130,3 +130,5 @@ dmypy.json
 *~
 *.pdf
 .vscode/
+*.csv
+*.json
