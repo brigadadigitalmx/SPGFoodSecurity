@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 
 def asigna_medias(X, medias):

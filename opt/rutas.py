@@ -12,8 +12,7 @@ def orden(puntos, centro_x, centro_y):
                 (1-cos((centro_y-puntos.lon.iloc[x])*p))/2
         a = 12742 * asin(sqrt(a))
         dists.append(a)
-    puntos['labs_ruta'] = dists
-    puntos = puntos.sort_values('labs_ruta')
+    puntos = puntos.assign(labs_ruta=dists).sort_values('labs_ruta')
     return puntos
 
 
@@ -25,10 +24,8 @@ def crea_rutas(casas_df, df_final, centros_df):
     # OUTPUT
     # labs_rutas
     # df que entrega el orden a repartir por casas
-    df_rutas = casas_df.join(df_final, on='labs_casas', lsuffix='_ll')
-    df_rutas = df_rutas.drop('labs_casas_ll', axis=1)
-    df_rutas = df_rutas.join(centros_df, on='labs_centros', rsuffix='_centros')
-    df_rutas = df_rutas.drop('labs_centros_centros', axis=1)
+    df_rutas = casas_df.merge(df_final, on='labs_casas')
+    df_rutas = df_rutas.merge(centros_df, on='labs_centros', suffixes=('', '_centros'))
     dataframes_ordered = []
     for x in df_rutas.labs_cuadrilla.unique():
         new_df = df_rutas[df_rutas.labs_cuadrilla == x]
