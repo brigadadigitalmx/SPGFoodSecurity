@@ -28,3 +28,6 @@ Se requiere que se produzca una imagen de Docker para poder exportar todo en con
 
 ** Solución
 El resultado de la optimización está dentro de las carpetas opt, se genera una imagen Docker para poder reproducir la API que se pactó. La solución para asignar hogares a centros de distribución fue hacer un agrupamiento automático con k-medias (con centro propuesto) para encontrar el óptimo. Posteriormente se vuelve a hacer un agrupamiento automático con k-medias para encontrar la mejor distribución de cuadrillas por centro de distribución. Finalmente el ordenamiento de la ruta se hace en función a la distancia radial a los centros de distribución con respecto a cada casa asignada. 
+** GIST
+Proyecto que ayuda a la optimización logística de la repartición de despensas para familias en situación vulnerable en el municipio de San Pedro Garza, Nuevo León. 
+
