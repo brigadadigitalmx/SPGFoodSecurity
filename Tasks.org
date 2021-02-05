@@ -6,16 +6,16 @@
 - *Cuadrillas*: Grupos de diversas dependencias que saldrán a entregar las despensas, cada uno es responsable de guardar su evidencia de la entrega. Hay más de una cuadrilla por centro de distribución. 
 - *Despensas*: Hay al menos 4 tipos de despensas:
   - Adultos mayores.
-  - Enfermos COVID-19
+  - Enfermos COVID-19.
   - Familias con niños.
   - Familias sin niños.
 
 *** Sistemas. 
 
 Necesitamos dos sistemas: 
-
 - Generar la distribución de insumos necesarios entre los diversos centros de distribución.
 - Generar el orden en el que las cuadrillas tendrán que repartir las distintas despensas. 
+
 ** Problemas
 *** Distribución de insumos necesarios. 
 Dada la demanda de despensas (serie de coordenadas y el tipo de despensa dd = (lat,long, td) ), y centros de distribución (coordenadas cd = (lat,long)). Encontrar La asignación óptima de los hogares a cada centro de distribución. 
