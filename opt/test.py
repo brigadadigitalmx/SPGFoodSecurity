@@ -23,12 +23,12 @@ if __name__ == '__main__':
     n_centros = 2
     n_cuadrillas = [15, 15]
     casas_df, centros_df = generate_dataset(n_casas, n_centros, n_cuadrillas)
-    t0 = time.clock()
+    t0 = time.time()
     r = requests.post('http://0.0.0.0:5000/get_best_routes',
                       json={
                           'hogares': casas_df.to_dict(orient='records'),
                           'centros': centros_df.to_dict(orient='records')
                       })
-    t1 = time.clock()
+    t1 = time.time()
     print(t1-t0)
     print(pd.DataFrame(r.json()))

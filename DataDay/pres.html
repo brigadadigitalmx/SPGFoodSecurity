@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Data Days 2021</title>
+<meta name="author" content="(Miguel A. Escalante Serrato)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/league.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Data Days 2021</h1><h2 class="author">Miguel A. Escalante Serrato</h2><h2 class="date">23.03.21</h2>
+</section>
+<section>
+<section id="slide-org5967808">
+<h2 id="org5967808">Repensando la Optimización</h2>
+</section>
+</section>
+<section>
+<section id="slide-org229006e">
+<h2 id="org229006e">Contexto</h2>
+<div class="outline-text-2" id="text-org229006e">
+</div>
+</section>
+<section id="slide-orga6caa44">
+<h3 id="orga6caa44">Pandemia</h3>
+<ul>
+<li class="fragment appear">Personas enfermas aisladas</li>
+<li class="fragment appear">Incapacidad de salir a suplir necesidades básicas</li>
+<li class="fragment appear">Fomentar el quedarse en casa, en especial si hay alguien positivo a COVID-19</li>
+<li class="fragment appear">Equipos abrumados</li>
+
+</ul>
+</section>
+<section id="slide-orge7e2ccc">
+<h3 id="orge7e2ccc">Características generales</h3>
+<ul>
+<li class="fragment appear"><b>Centros de Distribución</b>: Centros en los que se almacenan las despensas y luego de ahí salen las cuadrillas a repartirlas.</li>
+<li class="fragment appear"><b>Cuadrillas</b>: Grupos de diversas dependencias que saldrán a entregar las despensas, cada uno es responsable de guardar su evidencia de la entrega. Hay más de una cuadrilla por centro de distribución.</li>
+
+</ul>
+</section>
+<section id="slide-org88a0d1b">
+<h3 id="org88a0d1b">Características generales</h3>
+<ul>
+<li><b>Despensas</b>: Hay al menos 4 tipos de despensas:
+<ul>
+<li class="fragment appear">Adultos mayores</li>
+<li class="fragment appear">Enfermos COVID-19</li>
+<li class="fragment appear">Familias con niños</li>
+<li class="fragment appear">Familias sin niños</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org16667f5">
+<h3 id="org16667f5">Status Quo</h3>
+<ul>
+<li class="fragment appear">Levantamiento de necesidades con Whatsapp (con lat,long).</li>
+<li class="fragment appear">Ruta de entrega con el orden de entrada al sistema.</li>
+<li class="fragment appear">Asignación a único centro de distribución.</li>
+<li class="fragment appear">Tienen un equipo tecnológico bastante bueno, pero con poco tiempo para afinar detalles.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd9e7868">
+<h2 id="orgd9e7868">Problemáticas</h2>
+<div class="outline-text-2" id="text-orgd9e7868">
+</div>
+</section>
+<section id="slide-orga369d4a">
+<h3 id="orga369d4a">Problema general</h3>
+<p class="fragment (appear)">
+Optimizar la entrega de recursos, a particulares en un municipio del país. 
+</p>
+</section>
+<section id="slide-org9b0ca21">
+<h3 id="org9b0ca21">Problemas con el problema :)</h3>
+<ul>
+<li class="fragment appear">Por privacidad de información no tenemos acceso a las ubicaciones realesCE</li>
+<li class="fragment appear">Las ubicaciones cambian cada día.</li>
+<li class="fragment appear">No tenemos recursos para levantar un servicio en la nube</li>
+<li class="fragment appear">La solución tiene que ser implementada en tiempos libres</li>
+<li class="fragment appear">Resolver lo más pronto posible.</li>
+
+</ul>
+</section>
+<section id="slide-org6cf4985">
+<h3 id="org6cf4985">Verdadero problema a resolver</h3>
+<p class="fragment (appear)">
+Mejorar de alguna manera el orden de ruta de entrega para que los recursos lleguen de una manera más eficiente a cada una de las casas, sin los datos necesarios, sin recursos asignados y sólo con la buena voluntad de algunas personas que están dispuestas a ayudar. Además de asignar los hogares a los centros de distribución para poder hacer la planeación correcta de la demanda.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org6fb3bdf">
+<h2 id="org6fb3bdf">Propuesta</h2>
+<div class="outline-text-2" id="text-org6fb3bdf">
+</div>
+</section>
+<section id="slide-orgcc19aed">
+<h3 id="orgcc19aed">Idea</h3>
+<ul>
+<li class="fragment appear">Agrupar hogares con k-means y centros sugeridos.</li>
+<li class="fragment appear">Ordenar con respecto a distancia radial con respecto a los centros de distribución.</li>
+<li class="fragment appear">Generar una API portable que su equipo pueda usar.</li>
+
+</ul>
+</section>
+<section id="slide-orga790c00">
+<h3 id="orga790c00">Y los datos?</h3>
+<ul>
+<li class="fragment appear">En principio pedimos algunos datos falsos.</li>
+<li class="fragment appear">Inmediatamente nos dimos cuenta que se podían generar puntos aleatorios.</li>
+
+</ul>
+</section>
+<section id="slide-org1eedb45">
+<h3 id="org1eedb45">Stack</h3>
+<ul>
+<li class="fragment appear">Python</li>
+<li class="fragment appear">Flask</li>
+<li class="fragment appear">Docker</li>
+
+</ul>
+</section>
+<section id="slide-org93438ac">
+<h3 id="org93438ac">Resultados.</h3>
+<ul>
+<li class="fragment appear">Para procesar 6,500 puntos y 2 centros de distribución toma 0.5 segs la respuesta.</li>
+<li class="fragment appear">Para procesar 65,000 puntos con 3 centros de distribución, toma 4.7 segs.</li>
+<li class="fragment appear">Se tiene una mejor ruta que el orden de entrada.</li>
+<li class="fragment appear">Se tienen asignaciones por distancia a los diferentes centros de distribución.</li>
+<li class="fragment appear">Se entregó en menos de 24 horas .</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org3c64d6c">
+<h2 id="org3c64d6c">Aprendizajes</h2>
+<div class="outline-text-2" id="text-org3c64d6c">
+</div>
+</section>
+<section id="slide-org5de22bd">
+<h3 id="org5de22bd">Negocio</h3>
+<ul>
+<li>No toda la información es relevante</li>
+<li>Incorporación y ayuda</li>
+<li>Simbiosis</li>
+
+</ul>
+</section>
+<section id="slide-org9a86f6c">
+<h3 id="org9a86f6c">Tecnología</h3>
+<ul>
+<li>La tecnología fue lo de menos</li>
+<li>Sin tener el conocimiento previo no habría sido posible.</li>
+
+</ul>
+</section>
+<section id="slide-org0951016">
+<h3 id="org0951016">Solución teórica</h3>
+<ul>
+<li>No es una solución a prueba de fallos</li>
+<li>No es la mejor solución general</li>
+<li>Es UNA mejor solución factible</li>
+
+</ul>
+</section>
+<section id="slide-orge5f62d0">
+<h3 id="orge5f62d0">Equipo.</h3>
+<ul>
+<li>Contar con una red de gente capacitada es fundamental.</li>
+<li>Reducir la complejidad a tareas muy particulares.</li>
+<li>Minimizar el impacto en el tiempo requerido del equipo.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

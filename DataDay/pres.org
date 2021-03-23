@@ -1,0 +1,87 @@
+#+Author: Miguel A. Escalante Serrato
+#+Title: Data Days 2021
+#+Date: 23.03.21
+#+LANGUAGE:  es
+#+OPTIONS: num:nil toc:nil
+#+OPTIONS: reveal_mathjax:t 
+#+OPTIONS: timestamp:nil
+#+REVEAL_THEME: league
+* Repensando la Optimización
+* Contexto
+** Pandemia
+  #+ATTR_REVEAL: :frag (appear)
+  - Personas enfermas aisladas
+  - Incapacidad de salir a suplir necesidades básicas
+  - Fomentar el quedarse en casa, en especial si hay alguien positivo a COVID-19
+  - Equipos abrumados
+** Características generales
+   #+ATTR_REVEAL: :frag (appear)
+- *Centros de Distribución*: Centros en los que se almacenan las despensas y luego de ahí salen las cuadrillas a repartirlas.
+- *Cuadrillas*: Grupos de diversas dependencias que saldrán a entregar las despensas, cada uno es responsable de guardar su evidencia de la entrega. Hay más de una cuadrilla por centro de distribución. 
+** Características generales
+- *Despensas*: Hay al menos 4 tipos de despensas:
+  #+ATTR_REVEAL: :frag (appear)
+  - Adultos mayores
+  - Enfermos COVID-19
+  - Familias con niños
+  - Familias sin niños
+** Status Quo
+  #+ATTR_REVEAL: :frag (appear)
+   - Levantamiento de necesidades con Whatsapp (con lat,long).
+   - Ruta de entrega con el orden de entrada al sistema.
+   - Asignación a único centro de distribución.
+   - Tienen un equipo tecnológico bastante bueno, pero con poco tiempo para afinar detalles.
+
+* Problemáticas
+** Problema general
+  #+ATTR_REVEAL: :frag (appear)
+  Optimizar la entrega de recursos, a particulares en un municipio del país. 
+** Problemas con el problema :)
+   #+ATTR_REVEAL: :frag (appear)
+   - Por privacidad de información no tenemos acceso a las ubicaciones realesCE
+   - Las ubicaciones cambian cada día.
+   - No tenemos recursos para levantar un servicio en la nube
+   - La solución tiene que ser implementada en tiempos libres
+   - Resolver lo más pronto posible.
+** Verdadero problema a resolver
+   #+ATTR_REVEAL: :frag (appear)
+   Mejorar de alguna manera el orden de ruta de entrega para que los recursos lleguen de una manera más eficiente a cada una de las casas, sin los datos necesarios, sin recursos asignados y sólo con la buena voluntad de algunas personas que están dispuestas a ayudar. Además de asignar los hogares a los centros de distribución para poder hacer la planeación correcta de la demanda.
+* Propuesta
+** Idea
+   #+ATTR_REVEAL: :frag (appear)
+   - Agrupar hogares con k-means y centros sugeridos.
+   - Ordenar con respecto a distancia radial con respecto a los centros de distribución.
+   - Generar una API portable que su equipo pueda usar.
+** Y los datos? 
+   #+ATTR_REVEAL: :frag (appear)
+   - En principio pedimos algunos datos falsos.
+   - Inmediatamente nos dimos cuenta que se podían generar puntos aleatorios. 
+** Stack
+   #+ATTR_REVEAL: :frag (appear)
+   - Python
+   - Flask
+   - Docker
+** Resultados. 
+   #+ATTR_REVEAL: :frag (appear)
+   - Para procesar 6,500 puntos y 2 centros de distribución toma 0.5 segs la respuesta.
+   - Para procesar 65,000 puntos con 3 centros de distribución, toma 4.7 segs.
+   - Se tiene una mejor ruta que el orden de entrada.
+   - Se tienen asignaciones por distancia a los diferentes centros de distribución.
+   - Se entregó en menos de 24 horas .
+     
+* Aprendizajes
+** Negocio
+   - No toda la información es relevante
+   - Incorporación y ayuda
+   - Simbiosis
+** Tecnología
+   - La tecnología fue lo de menos
+   - Sin tener el conocimiento previo no habría sido posible.
+** Solución teórica
+   - No es una solución a prueba de fallos
+   - No es la mejor solución general
+   - Es UNA mejor solución factible
+** Equipo.
+   - Contar con una red de gente capacitada es fundamental.
+   - Reducir la complejidad a tareas muy particulares.
+   - Minimizar el impacto en el tiempo requerido del equipo. 
