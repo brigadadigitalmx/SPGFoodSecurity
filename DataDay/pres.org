@@ -52,6 +52,10 @@
    - Agrupar hogares con k-means y centros sugeridos.
    - Ordenar con respecto a distancia radial con respecto a los centros de distribución.
    - Generar una API portable que su equipo pueda usar.
+** Y los datos? 
+   #+ATTR_REVEAL: :frag (appear)
+   - En principio pedimos algunos datos falsos.
+   - Inmediatamente nos dimos cuenta que se podían generar puntos aleatorios. 
 ** Stack
    #+ATTR_REVEAL: :frag (appear)
    - Python
