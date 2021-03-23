@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Repensando la Optimización</title>
+<meta name="author" content="(Miguel Angel Escalante Serrato)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Repensando la Optimización</h1><h2 class="author">Miguel Angel Escalante Serrato</h2><h2 class="date">23.03.21</h2>
+</section>
+
+<section>
+<section id="slide-orgebdb64a">
+<h2 id="orgebdb64a">Contexto</h2>
+<ul>
+<li class="fragment appear">Pandemia</li>
+<li class="fragment appear">Personas enfermas aisladas</li>
+<li class="fragment appear">Incapacidad de salir a suplir necesidades básicas</li>
+<li class="fragment appear">Fomentar el quedarse en casa, en especial si hay alguien positivo a COVID-19</li>
+
+</ul>
+</section>
+<section id="slide-orgc17bba0">
+<h3 id="orgc17bba0">Características generales</h3>
+<ul>
+<li class="fragment appear"><b>Centros de Distribución</b>: Centros en los que se almacenan las despensas y luego de ahí salen las cuadrillas a repartirlas.</li>
+<li class="fragment appear"><b>Cuadrillas</b>: Grupos de diversas dependencias que saldrán a entregar las despensas, cada uno es responsable de guardar su evidencia de la entrega. Hay más de una cuadrilla por centro de distribución.</li>
+
+</ul>
+</section>
+<section id="slide-org2f2efdd">
+<h3 id="org2f2efdd">Características generales</h3>
+<ul>
+<li><b>Despensas</b>: Hay al menos 4 tipos de despensas:
+<ul>
+<li class="fragment appear">Adultos mayores</li>
+<li class="fragment appear">Enfermos COVID-19</li>
+<li class="fragment appear">Familias con niños</li>
+<li class="fragment appear">Familias sin niños</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgcd0af28">
+<h3 id="orgcd0af28">Status Quo</h3>
+<ul>
+<li class="fragment appear">Levantamiento de necesidades con Whatsapp (con lat,long).</li>
+<li class="fragment appear">Ruta de entrega con el orden de entrada al sistema.</li>
+<li class="fragment appear">Asignación a único centro de distribución.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org53d4b98">
+<h2 id="org53d4b98">Problema a Resolver</h2>
+<p class="fragment (appear)">
+Optimizar la entrega de recursos, a particulares en un municipio del país. 
+</p>
+</section>
+<section id="slide-orga6cfaa8">
+<h3 id="orga6cfaa8">Problemas con el problema :)</h3>
+<ul>
+<li class="fragment appear">Por privacidad de información no tenemos acceso a las ubicaciones reales</li>
+<li class="fragment appear">Las ubicaciones cambian cada día.</li>
+<li class="fragment appear">No tenemos recursos para levantar un servicio en la nube</li>
+<li class="fragment appear">La solución tiene que ser implementada en tiempos libres</li>
+<li class="fragment appear">Resolver lo más pronto posible.</li>
+
+</ul>
+</section>
+<section id="slide-org93f0d00">
+<h3 id="org93f0d00">Verdadero problema a resolver</h3>
+<p>
+Mejorar de alguna manera el orden de ruta de entrega para que los recursos lleguen de una manera más eficiente a cada una de las casas, sin los datos necesarios, sin recursos asignados y sólo con la buena voluntad de algunas personas que están dispuestas a ayudar. Además de asignar los hogares a los centros de distribución para poder hacer la planeación correcta de la demanda.
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+
+
+</script>
+</body>
+</html>

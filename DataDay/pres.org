@@ -1,0 +1,47 @@
+#+Author: Miguel Angel Escalante Serrato
+#+Title: Repensando la Optimización
+#+Date: 23.03.21
+#+LANGUAGE:  es
+#+OPTIONS: num:nil toc:nil
+#+OPTIONS: reveal_mathjax:t 
+#+OPTIONS: timestamp:nil
+#+REVEAL_THEME: moon
+
+* Contexto
+  #+ATTR_REVEAL: :frag (appear)
+  - Pandemia
+  - Personas enfermas aisladas
+  - Incapacidad de salir a suplir necesidades básicas
+  - Fomentar el quedarse en casa, en especial si hay alguien positivo a COVID-19
+** Características generales
+   #+ATTR_REVEAL: :frag (appear)
+- *Centros de Distribución*: Centros en los que se almacenan las despensas y luego de ahí salen las cuadrillas a repartirlas.
+- *Cuadrillas*: Grupos de diversas dependencias que saldrán a entregar las despensas, cada uno es responsable de guardar su evidencia de la entrega. Hay más de una cuadrilla por centro de distribución. 
+** Características generales
+- *Despensas*: Hay al menos 4 tipos de despensas:
+  #+ATTR_REVEAL: :frag (appear)
+  - Adultos mayores
+  - Enfermos COVID-19
+  - Familias con niños
+  - Familias sin niños
+** Status Quo
+  #+ATTR_REVEAL: :frag (appear)
+   - Levantamiento de necesidades con Whatsapp (con lat,long).
+   - Ruta de entrega con el orden de entrada al sistema.
+   - Asignación a único centro de distribución. 
+
+* Problema a Resolver
+  #+ATTR_REVEAL: :frag (appear)
+  Optimizar la entrega de recursos, a particulares en un municipio del país. 
+** Problemas con el problema :)
+   #+ATTR_REVEAL: :frag (appear)
+   - Por privacidad de información no tenemos acceso a las ubicaciones reales
+   - Las ubicaciones cambian cada día.
+   - No tenemos recursos para levantar un servicio en la nube
+   - La solución tiene que ser implementada en tiempos libres
+   - Resolver lo más pronto posible.
+** Verdadero problema a resolver
+   Mejorar de alguna manera el orden de ruta de entrega para que los recursos lleguen de una manera más eficiente a cada una de las casas, sin los datos necesarios, sin recursos asignados y sólo con la buena voluntad de algunas personas que están dispuestas a ayudar. Además de asignar los hogares a los centros de distribución para poder hacer la planeación correcta de la demanda.
+* Propuesta
+** 
+     
