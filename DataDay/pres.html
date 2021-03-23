@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
-<title>Repensando la Optimización</title>
-<meta name="author" content="(Miguel Angel Escalante Serrato)"/>
+<title>Data Days 2021</title>
+<meta name="author" content="(Miguel A. Escalante Serrato)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/moon.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/league.css" id="theme"/>
 
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -26,30 +26,39 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Repensando la Optimización</h1><h2 class="author">Miguel Angel Escalante Serrato</h2><h2 class="date">23.03.21</h2>
+<section id="sec-title-slide"><h1 class="title">Data Days 2021</h1><h2 class="author">Miguel A. Escalante Serrato</h2><h2 class="date">23.03.21</h2>
 </section>
-
 <section>
-<section id="slide-orgebdb64a">
-<h2 id="orgebdb64a">Contexto</h2>
+<section id="slide-org26dc732">
+<h2 id="org26dc732">Repensando la Optimización</h2>
+</section>
+</section>
+<section>
+<section id="slide-org7194dde">
+<h2 id="org7194dde">Contexto</h2>
+<div class="outline-text-2" id="text-org7194dde">
+</div>
+</section>
+<section id="slide-orgd3bbad5">
+<h3 id="orgd3bbad5">Pandemia</h3>
 <ul>
-<li class="fragment appear">Pandemia</li>
 <li class="fragment appear">Personas enfermas aisladas</li>
 <li class="fragment appear">Incapacidad de salir a suplir necesidades básicas</li>
 <li class="fragment appear">Fomentar el quedarse en casa, en especial si hay alguien positivo a COVID-19</li>
+<li class="fragment appear">Equipos abrumados</li>
 
 </ul>
 </section>
-<section id="slide-orgc17bba0">
-<h3 id="orgc17bba0">Características generales</h3>
+<section id="slide-orgc5c5711">
+<h3 id="orgc5c5711">Características generales</h3>
 <ul>
 <li class="fragment appear"><b>Centros de Distribución</b>: Centros en los que se almacenan las despensas y luego de ahí salen las cuadrillas a repartirlas.</li>
 <li class="fragment appear"><b>Cuadrillas</b>: Grupos de diversas dependencias que saldrán a entregar las despensas, cada uno es responsable de guardar su evidencia de la entrega. Hay más de una cuadrilla por centro de distribución.</li>
 
 </ul>
 </section>
-<section id="slide-org2f2efdd">
-<h3 id="org2f2efdd">Características generales</h3>
+<section id="slide-org8fdd44e">
+<h3 id="org8fdd44e">Características generales</h3>
 <ul>
 <li><b>Despensas</b>: Hay al menos 4 tipos de despensas:
 <ul>
@@ -62,28 +71,34 @@
 
 </ul>
 </section>
-<section id="slide-orgcd0af28">
-<h3 id="orgcd0af28">Status Quo</h3>
+<section id="slide-org68e8867">
+<h3 id="org68e8867">Status Quo</h3>
 <ul>
 <li class="fragment appear">Levantamiento de necesidades con Whatsapp (con lat,long).</li>
 <li class="fragment appear">Ruta de entrega con el orden de entrada al sistema.</li>
 <li class="fragment appear">Asignación a único centro de distribución.</li>
+<li class="fragment appear">Tienen un equipo tecnológico bastante bueno, pero con poco tiempo para afinar detalles.</li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org53d4b98">
-<h2 id="org53d4b98">Problema a Resolver</h2>
+<section id="slide-org2d48e8a">
+<h2 id="org2d48e8a">Problemáticas</h2>
+<div class="outline-text-2" id="text-org2d48e8a">
+</div>
+</section>
+<section id="slide-orgf7fa852">
+<h3 id="orgf7fa852">Problema general</h3>
 <p class="fragment (appear)">
 Optimizar la entrega de recursos, a particulares en un municipio del país. 
 </p>
 </section>
-<section id="slide-orga6cfaa8">
-<h3 id="orga6cfaa8">Problemas con el problema :)</h3>
+<section id="slide-org1e32f15">
+<h3 id="org1e32f15">Problemas con el problema :)</h3>
 <ul>
-<li class="fragment appear">Por privacidad de información no tenemos acceso a las ubicaciones reales</li>
+<li class="fragment appear">Por privacidad de información no tenemos acceso a las ubicaciones realesCE</li>
 <li class="fragment appear">Las ubicaciones cambian cada día.</li>
 <li class="fragment appear">No tenemos recursos para levantar un servicio en la nube</li>
 <li class="fragment appear">La solución tiene que ser implementada en tiempos libres</li>
@@ -91,11 +106,90 @@ Optimizar la entrega de recursos, a particulares en un municipio del país.
 
 </ul>
 </section>
-<section id="slide-org93f0d00">
-<h3 id="org93f0d00">Verdadero problema a resolver</h3>
-<p>
+<section id="slide-orge48118b">
+<h3 id="orge48118b">Verdadero problema a resolver</h3>
+<p class="fragment (appear)">
 Mejorar de alguna manera el orden de ruta de entrega para que los recursos lleguen de una manera más eficiente a cada una de las casas, sin los datos necesarios, sin recursos asignados y sólo con la buena voluntad de algunas personas que están dispuestas a ayudar. Además de asignar los hogares a los centros de distribución para poder hacer la planeación correcta de la demanda.
 </p>
+</section>
+</section>
+<section>
+<section id="slide-org049410e">
+<h2 id="org049410e">Propuesta</h2>
+<div class="outline-text-2" id="text-org049410e">
+</div>
+</section>
+<section id="slide-org89b571d">
+<h3 id="org89b571d">Idea</h3>
+<ul>
+<li class="fragment appear">Agrupar hogares con k-means y centros sugeridos.</li>
+<li class="fragment appear">Ordenar con respecto a distancia radial con respecto a los centros de distribución.</li>
+<li class="fragment appear">Generar una API portable que su equipo pueda usar.</li>
+
+</ul>
+</section>
+<section id="slide-org1aa3d65">
+<h3 id="org1aa3d65">Stack</h3>
+<ul>
+<li class="fragment appear">Python</li>
+<li class="fragment appear">Flask</li>
+<li class="fragment appear">Docker</li>
+
+</ul>
+</section>
+<section id="slide-org44b7cb2">
+<h3 id="org44b7cb2">Resultados.</h3>
+<ul>
+<li class="fragment appear">Para procesar 6,500 puntos y 2 centros de distribución toma 0.5 segs la respuesta.</li>
+<li class="fragment appear">Para procesar 65,000 puntos con 3 centros de distribución, toma 4.7 segs.</li>
+<li class="fragment appear">Se tiene una mejor ruta que el orden de entrada.</li>
+<li class="fragment appear">Se tienen asignaciones por distancia a los diferentes centros de distribución.</li>
+<li class="fragment appear">Se entregó en menos de 24 horas .</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org7bfbf5f">
+<h2 id="org7bfbf5f">Aprendizajes</h2>
+<div class="outline-text-2" id="text-org7bfbf5f">
+</div>
+</section>
+<section id="slide-orgf8e720a">
+<h3 id="orgf8e720a">Negocio</h3>
+<ul>
+<li>No toda la información es relevante</li>
+<li>Incorporación y ayuda</li>
+<li>Simbiosis</li>
+
+</ul>
+</section>
+<section id="slide-org140e02e">
+<h3 id="org140e02e">Tecnología</h3>
+<ul>
+<li>La tecnología fue lo de menos</li>
+<li>Sin tener el conocimiento previo no habría sido posible.</li>
+
+</ul>
+</section>
+<section id="slide-org36f6492">
+<h3 id="org36f6492">Solución teórica</h3>
+<ul>
+<li>No es una solución a prueba de fallos</li>
+<li>No es la mejor solución general</li>
+<li>Es UNA mejor solución factible</li>
+
+</ul>
+</section>
+<section id="slide-org0ae05e3">
+<h3 id="org0ae05e3">Equipo.</h3>
+<ul>
+<li>Contar con una red de gente capacitada es fundamental.</li>
+<li>Reducir la complejidad a tareas muy particulares.</li>
+<li>Minimizar el impacto en el tiempo requerido del equipo.</li>
+
+</ul>
 </section>
 </section>
 </div>
@@ -120,8 +214,6 @@ dependencies: [
  { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
  { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
 });
-
-
 </script>
 </body>
 </html>
