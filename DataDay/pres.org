@@ -28,7 +28,8 @@
   #+ATTR_REVEAL: :frag (appear)
    - Levantamiento de necesidades con Whatsapp (con lat,long).
    - Ruta de entrega con el orden de entrada al sistema.
-   - Asignación a único centro de distribución. 
+   - Asignación a único centro de distribución.
+   - Tienen un equipo tecnológico bastante bueno, pero con poco tiempo para afinar detalles.
 
 * Problema a Resolver
   #+ATTR_REVEAL: :frag (appear)
@@ -41,7 +42,18 @@
    - La solución tiene que ser implementada en tiempos libres
    - Resolver lo más pronto posible.
 ** Verdadero problema a resolver
+   #+ATTR_REVEAL: :frag (appear)
    Mejorar de alguna manera el orden de ruta de entrega para que los recursos lleguen de una manera más eficiente a cada una de las casas, sin los datos necesarios, sin recursos asignados y sólo con la buena voluntad de algunas personas que están dispuestas a ayudar. Además de asignar los hogares a los centros de distribución para poder hacer la planeación correcta de la demanda.
 * Propuesta
-** 
-     
+** Idea
+   #+ATTR_REVEAL: :frag (appear)
+   - Agrupar hogares con k-means y centros sugeridos.
+   - Ordenar con respecto a distancia radial con respecto a los centros de distribución.
+   - Generar una API portable que su equipo pueda usar.
+** Stack
+   #+ATTR_REVEAL: :frag (appear)
+   - Python
+   - Flask
+   - Docker
+** Resultados. 
+   - 
